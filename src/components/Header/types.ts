@@ -1,7 +1,5 @@
-import type { PlanetNameAndImages } from '../../utils';
-
 type Props = {
-	data: PlanetNameAndImages[];
+	planetNames: string[];
 };
 
 export type { Props };

@@ -1,10 +1,39 @@
+import { useState } from 'react';
+import HamburgerMenuIcon from '../../assets/icon-hamburger.svg';
 import type { Props } from './types';
 import './Header.css';
 
-function Header({ data }: Props) {
+function Header({ planetNames }: Props) {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 	return (
 		<header className='Header'>
-			<h1>Header</h1>
+			<div className='Header__topbar'>
+				<h1 className='Header__title'>The Planets</h1>
+				<div
+					className={`Header__menu-toggle${isMenuOpen ? ' Header__menu-toggle--open' : ''}`}
+					onClick={() => {
+						setIsMenuOpen((prevState) => !prevState);
+					}}
+				>
+					<img src={HamburgerMenuIcon} alt='Menu' />
+				</div>
+			</div>
+			<nav className={`Header__nav${isMenuOpen ? ' Header__nav--open' : ''}`}>
+				<ul className='Header__nav-list'>
+					{planetNames.map((planetName) => (
+						<li key={planetName} className='Header__nav-item'>
+							<div
+								className='Header__nav-item-color'
+								style={{
+									backgroundColor: `var(--${planetName.toLowerCase()})`,
+								}}
+							/>
+							{planetName}
+						</li>
+					))}
+				</ul>
+			</nav>
 		</header>
 	);
 }
