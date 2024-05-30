@@ -9,4 +9,8 @@ function parsePlanetNames(): string[] {
 	return planetsData.map(({ name }) => name);
 }
 
-export { parseData, parsePlanetNames };
+function parseParticularPlanetData(planetName: string): Planet {
+	return planetsData.find(({ name }) => name.toLowerCase() === planetName) as Planet;
+}
+
+export { parseData, parsePlanetNames, parseParticularPlanetData };
