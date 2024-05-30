@@ -36,6 +36,12 @@ body::before {
 	pointer-events: none;
 }
 
+a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
 @media (min-width: 768px) {
 	:root {
 		--padding-x: 40px;
