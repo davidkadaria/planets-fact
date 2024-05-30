@@ -1,12 +1,12 @@
 import planetsData from '../data.json';
-import type { Planet, PlanetNameAndImages } from '.';
+import type { Planet } from '.';
 
 function parseData(): Planet[] {
 	return planetsData as Planet[];
 }
 
-function parsePlanetNamesAndImages(): PlanetNameAndImages[] {
-	return planetsData.map(({ name, images }) => ({ name, images })) as PlanetNameAndImages[];
+function parsePlanetNames(): string[] {
+	return planetsData.map(({ name }) => name);
 }
 
-export { parseData, parsePlanetNamesAndImages };
+export { parseData, parsePlanetNames };

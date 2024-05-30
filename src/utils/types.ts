@@ -23,13 +23,4 @@ type Planet = {
 	};
 };
 
-type PlanetNameAndImages = {
-	name: string;
-	images: {
-		planet: string;
-		internal: string;
-		geology: string;
-	};
-};
-
-export type { Planet, PlanetNameAndImages };
+export type { Planet };
