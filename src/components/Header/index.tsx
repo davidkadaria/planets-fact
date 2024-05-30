@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import HamburgerMenuIcon from '../../assets/icon-hamburger.svg';
 import type { Props } from './types';
 import './Header.css';
 
 function Header({ planetNames }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	return (
 		<header className='Header'>
@@ -21,15 +25,24 @@ function Header({ planetNames }: Props) {
 			</div>
 			<nav className={`Header__nav${isMenuOpen ? ' Header__nav--open' : ''}`}>
 				<ul className='Header__nav-list'>
-					{planetNames.map((planetName) => (
-						<li key={planetName} className='Header__nav-item'>
+					{planetNames.map((planet) => (
+						<li
+							key={planet}
+							className={`Header__nav-item${
+								`/${planet.toLowerCase()}` === location.pathname ? ' Header__nav-item--active' : ''
+							}`}
+							onClick={() => {
+								navigate(`/${planet.toLowerCase()}`);
+								if (isMenuOpen) setIsMenuOpen(false);
+							}}
+						>
 							<div
 								className='Header__nav-item-color'
 								style={{
-									backgroundColor: `var(--${planetName.toLowerCase()})`,
+									backgroundColor: `var(--${planet.toLowerCase()})`,
 								}}
 							/>
-							{planetName}
+							{planet}
 						</li>
 					))}
 				</ul>
