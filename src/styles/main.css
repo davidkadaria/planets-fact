@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/spartan');
 
+:root {
+	--padding-x: 24px;
+	--transition-duration: 0.3s;
+}
+
 *,
 *::before,
 *::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-style: normal;
+	font-weight: 400;
 }
 
 body {
 	position: relative;
 	background-color: var(--dark);
+	font-style: normal;
+	font-weight: 400;
 }
 
 body::before {
@@ -25,4 +34,16 @@ body::before {
 	background-size: cover;
 	z-index: -1;
 	pointer-events: none;
+}
+
+@media (min-width: 768px) {
+	:root {
+		--padding-x: 40px;
+	}
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--padding-x: 165px;
+	}
 }
