@@ -52,11 +52,8 @@
 	height: 100vh;
 	position: absolute;
 	left: -100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
 	padding-inline: var(--padding-x);
+	padding-top: 24px;
 	background-color: var(--dark);
 	color: var(--white);
 	opacity: 0;
@@ -71,6 +68,7 @@
 .Header__nav-list {
 	width: 100%;
 	list-style: none;
+	position: relative;
 }
 
 .Header__nav-item {
@@ -85,6 +83,7 @@
 	font-size: 16px;
 	line-height: 25px;
 	letter-spacing: 1.36364px;
+	cursor: pointer;
 }
 
 .Header__nav-item::before {
@@ -118,4 +117,113 @@
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+	.Header::after {
+		content: '';
+		width: 100%;
+		height: 1px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: var(--white);
+		opacity: 0.2;
+	}
+
+	.Header__topbar {
+		height: initial;
+		justify-content: center;
+		padding-top: 32px;
+		padding-bottom: 40px;
+	}
+
+	.Header__topbar::after {
+		display: none;
+	}
+
+	.Header__menu-toggle {
+		display: none;
+	}
+
+	.Header__nav {
+		width: 100%;
+		height: initial;
+		position: initial;
+		padding-top: 0;
+		background-color: transparent;
+		opacity: 1;
+	}
+
+	.Header__nav-list {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.Header__nav-item {
+		width: initial;
+		position: initial;
+		display: initial;
+		padding-block: 0;
+		padding-bottom: 28px;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+
+	.Header__nav-item::before {
+		display: none;
+	}
+
+	.Header__nav-item::after {
+		display: none;
+	}
+
+	.Header__nav-item-color {
+		display: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	.Header {
+		height: 85px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: 32px;
+	}
+
+	.Header__topbar {
+		width: auto;
+		padding: 0;
+	}
+
+	.Header__topbar::after {
+		display: none;
+	}
+
+	.Header__menu-toggle {
+		display: none;
+	}
+
+	.Header__nav {
+		width: auto;
+		padding: 0;
+	}
+
+	.Header__nav-list {
+		gap: 34px;
+	}
+
+	.Header__nav-item {
+		padding: 0;
+	}
+
+	.Header__nav-item::before {
+		display: block;
+		height: 4px;
+		top: calc(-100% - 4px);
+		background-color: var(--moonstone);
+		opacity: 1;
+	}
 }
