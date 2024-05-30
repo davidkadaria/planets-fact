@@ -1,3 +1,4 @@
+import { Header } from './components';
 // Global stylings
 import './styles/theme.css';
 import './styles/main.css';
@@ -7,7 +8,7 @@ import './App.css';
 function App() {
 	return (
 		<div className='App'>
-			<h1>TEST</h1>
+			<Header />
 		</div>
 	);
 }
