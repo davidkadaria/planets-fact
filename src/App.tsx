@@ -1,18 +1,18 @@
 import { Header } from './components';
 
-import { parsePlanetNamesAndImages } from './utils';
+import { parsePlanetNames } from './utils';
 // Global stylings
 import './styles/theme.css';
 import './styles/main.css';
 
 import './App.css';
 
-const planetNamesAndImages = parsePlanetNamesAndImages();
+const planetNames = parsePlanetNames();
 
 function App() {
 	return (
 		<div className='App'>
-			<Header data={planetNamesAndImages} />
+			<Header planetNames={planetNames} />
 		</div>
 	);
 }
