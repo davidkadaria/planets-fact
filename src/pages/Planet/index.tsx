@@ -1,15 +1,21 @@
-import { useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { parsePlanetNames, parseParticularPlanetData } from '../../utils';
-import type { Planet as PlanetType } from '../../utils';
+import {
+	parsePlanetNames,
+	parseParticularPlanetData,
+	getImagePropertyNameByTab,
+} from '../../utils';
+import './Planet.css';
 
 const planetNames = parsePlanetNames();
 
 function Planet() {
+	const [tab, setTab] = useState<'overview' | 'structure' | 'geology'>('overview');
+
 	const { planetName } = useParams();
 	const navigate = useNavigate();
 
-	const planetData: PlanetType = useMemo(() => {
+	const planetData = useMemo(() => {
 		return parseParticularPlanetData(planetName!);
 	}, [planetName]);
 
@@ -23,7 +29,54 @@ function Planet() {
 
 	if (!planetData) return null;
 
-	return <div>{planetData.name}</div>;
+	return (
+		<div className='Planet'>
+			<section className='Planet__info'>
+				<div className='Planet__image'>
+					<img src={planetData.images[getImagePropertyNameByTab(tab)]} alt={planetData.name} />
+				</div>
+				<div className='Planet__description'>
+					<h1 className='Planet__name'>{planetData.name}</h1>
+					<p className='Planet__summary'>{planetData[tab].content}</p>
+					<a
+						className='Planet__source'
+						href={planetData[tab].source}
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						Wikipedia
+					</a>
+					<div className='Planet__info__buttons'>
+						<button
+							className='Planet__info__button'
+							onClick={() => {
+								setTab('overview');
+							}}
+						>
+							01 OVERVIEW
+						</button>
+						<button
+							className='Planet__info__button'
+							onClick={() => {
+								setTab('structure');
+							}}
+						>
+							02 STRUCTURE
+						</button>
+						<button
+							className='Planet__info__button'
+							onClick={() => {
+								setTab('geology');
+							}}
+						>
+							03 SURFACE
+						</button>
+					</div>
+				</div>
+			</section>
+			<section className='Planet__details'></section>
+		</div>
+	);
 }
 
 export { Planet };

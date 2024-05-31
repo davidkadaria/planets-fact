@@ -9,4 +9,8 @@ function parseParticularPlanetData(planetName: string): Planet {
 	return planetsData.find(({ name }) => name.toLowerCase() === planetName) as Planet;
 }
 
-export { parsePlanetNames, parseParticularPlanetData };
+function getImagePropertyNameByTab(tab: 'overview' | 'structure' | 'geology') {
+	return tab === 'overview' ? 'planet' : tab === 'structure' ? 'internal' : 'geology';
+}
+
+export { parsePlanetNames, parseParticularPlanetData, getImagePropertyNameByTab };

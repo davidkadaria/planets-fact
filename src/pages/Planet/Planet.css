@@ -1,0 +1,87 @@
+.Planet {
+	width: 100%;
+}
+
+.Planet__info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.Planet__image {
+	width: 100%;
+	height: 304px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Planet__image img {
+	transform: scale(0.38445);
+}
+
+.Planet__description {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.Planet__name {
+	color: var(--white);
+	text-align: center;
+	text-transform: uppercase;
+	font-family: var(--ff-antonio);
+	font-size: 40px;
+	line-height: 52px;
+}
+
+.Planet__summary {
+	margin-top: 16px;
+	margin-bottom: 32px;
+	color: var(--white);
+	text-align: center;
+	font-family: var(--ff-spartan);
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.Planet__source {
+	position: relative;
+	color: var(--white);
+	text-decoration: underline;
+	font-family: var(--ff-spartan);
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 24px;
+	opacity: 0.5;
+	mix-blend-mode: normal;
+}
+
+.Planet__source::before {
+	content: 'Source :';
+	display: inline-block;
+	padding-right: 4px;
+	color: var(--white);
+	font-family: var(--ff-spartan);
+	font-size: 12px;
+	line-height: 24px;
+	opacity: 0.5;
+	mix-blend-mode: normal;
+}
+
+.Planet__source::after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	display: block;
+	position: absolute;
+	right: calc(-12px - 4px);
+	top: 50%;
+	transform: translateY(-50%);
+	background: url('../../assets/icon-source.svg') no-repeat;
+}
+
+.Planet__info__buttons {
+}
