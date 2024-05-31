@@ -21,6 +21,8 @@ function Planet() {
 		}
 	}, [navigate, planetName]);
 
+	if (!planetData) return null;
+
 	return <div>{planetData.name}</div>;
 }
 
