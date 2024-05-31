@@ -1,0 +1,17 @@
+.App__main {
+	margin-top: 70px;
+	padding-inline: var(--padding-x);
+	color: var(--white);
+}
+
+@media (min-width: 768px) {
+	.App__main {
+		margin-top: 160px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.App__main {
+		margin-top: 85px;
+	}
+}
