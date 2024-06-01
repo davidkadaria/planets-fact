@@ -25,6 +25,10 @@ function Planet() {
 			// If the planet name is not valid, redirect to the default planet page
 			navigate('/mercury', { replace: true });
 		}
+
+		// return () => {
+		// 	setTab('overview');
+		// };
 	}, [navigate, planetName]);
 
 	if (!planetData) return null;
