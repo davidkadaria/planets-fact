@@ -8,7 +8,7 @@ type Planet = {
 		content: string;
 		source: string;
 	};
-	geology: {
+	surface: {
 		content: string;
 		source: string;
 	};
@@ -19,7 +19,7 @@ type Planet = {
 	images: {
 		planet: string;
 		internal: string;
-		geology: string;
+		surface: string;
 	};
 };
 
