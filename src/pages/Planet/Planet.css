@@ -98,6 +98,10 @@
 	justify-content: space-between;
 }
 
+body.scrolled .Planet__info__buttons {
+	background-color: var(--dark);
+}
+
 .Planet__info__buttons::after {
 	content: '';
 	width: 100%;
@@ -228,6 +232,7 @@
 		justify-content: center;
 		align-items: center;
 		gap: 16px;
+		background-color: transparent !important;
 	}
 
 	.Planet__info__buttons::after {
