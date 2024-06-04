@@ -23,6 +23,10 @@
 
 .Planet__description {
 	width: 100%;
+}
+
+.Planet__dynamic-info {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -184,4 +188,103 @@
 	letter-spacing: -0.75px;
 	font-family: var(--ff-antonio);
 	font-size: 20px;
+}
+
+@media (min-width: 768px) {
+	.Planet__image {
+		height: 460px;
+	}
+
+	.Planet__image img {
+		transform: scale(0.63445);
+	}
+
+	.Planet__description {
+		display: flex;
+		align-items: center;
+		gap: 70px;
+	}
+
+	.Planet__dynamic-info {
+		align-items: flex-start;
+	}
+
+	.Planet__name {
+		font-size: 48px;
+		line-height: 62px;
+	}
+
+	.Planet__summary {
+		margin-top: 24px;
+		text-align: left;
+	}
+
+	.Planet__info__buttons {
+		position: initial;
+		height: auto;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+	}
+
+	.Planet__info__buttons::after {
+		display: none;
+	}
+
+	.Planet__info__button {
+		width: 280px;
+		text-align: left;
+		opacity: 1;
+		padding: 8px 20px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.Planet__info__button span {
+		height: 24px;
+		line-height: 24px;
+		display: inline-block;
+		margin-right: 14px;
+		color: var(--white);
+		text-transform: uppercase;
+		letter-spacing: 1.92857px;
+		font-family: var(--ff-spartan);
+		font-weight: 700;
+		font-size: 10px;
+		mix-blend-mode: normal;
+		opacity: 0.5;
+	}
+
+	.Planet__info__button--active {
+		background-color: var(--earth);
+	}
+
+	.Planet__info__button--active::after {
+		display: none;
+	}
+
+	.Planet__details {
+		margin-bottom: 36px;
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	.Planet__detail {
+		height: 88px;
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: initial;
+		align-items: initial;
+		gap: 6px;
+	}
+
+	.Planet__detail__value {
+		height: 30px;
+		line-height: 30px;
+		letter-spacing: -0.9px;
+		font-size: 24px;
+	}
 }

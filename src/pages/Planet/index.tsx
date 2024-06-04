@@ -74,19 +74,22 @@ function Planet() {
 					<img src={planetData.images[getImagePropertyNameByTab(tab)]} alt={planetData.name} />
 				</div>
 				<div className='Planet__description'>
-					<h1 className='Planet__name'>{planetData.name}</h1>
-					<p className='Planet__summary'>{planetData[tab].content}</p>
-					<a
-						className='Planet__source'
-						href={planetData[tab].source}
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						Wikipedia
-					</a>
+					<div className='Planet__dynamic-info'>
+						<h1 className='Planet__name'>{planetData.name}</h1>
+						<p className='Planet__summary'>{planetData[tab].content}</p>
+						<a
+							className='Planet__source'
+							href={planetData[tab].source}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							Wikipedia
+						</a>
+					</div>
 					<div className='Planet__info__buttons'>
 						{buttonData.map((button) => (
 							<Button
+								key={button.id}
 								className={`Planet__info__button${
 									tab === button.label ? ' Planet__info__button--active' : ''
 								}`}
@@ -94,7 +97,8 @@ function Planet() {
 									setTab(button.label);
 								}}
 							>
-								<span>{button.id}</span> {button.label}
+								<span>{button.id}</span>
+								{button.label}
 							</Button>
 						))}
 					</div>
