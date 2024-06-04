@@ -36,7 +36,18 @@ function Planet() {
 		<div className='Planet'>
 			<section className='Planet__info'>
 				<div className='Planet__image'>
-					<img src={planetData.images[getImagePropertyNameByTab(tab)]} alt={planetData.name} />
+					<img
+						className='Planet__img'
+						src={planetData.images[getImagePropertyNameByTab(tab)]}
+						alt={planetData.name}
+					/>
+					{tab === 'surface' && (
+						<img
+							className='Planet__surface-img'
+							src={planetData.images.surface}
+							alt={`${planetData.name}'s surface`}
+						/>
+					)}
 				</div>
 				<div className='Planet__description'>
 					<div className='Planet__dynamic-info'>

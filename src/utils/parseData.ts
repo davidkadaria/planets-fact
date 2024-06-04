@@ -10,7 +10,7 @@ function parseParticularPlanetData(planetName: string): Planet {
 }
 
 function getImagePropertyNameByTab(tab: 'overview' | 'structure' | 'surface') {
-	return tab === 'overview' ? 'planet' : tab === 'structure' ? 'internal' : 'surface';
+	return tab === 'structure' ? 'internal' : 'planet';
 }
 
 export { parsePlanetNames, parseParticularPlanetData, getImagePropertyNameByTab };

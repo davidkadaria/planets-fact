@@ -17,8 +17,16 @@
 	align-items: center;
 }
 
-.Planet__image img {
+.Planet__img {
 	transform: scale(0.38445);
+}
+
+.Planet__surface-img {
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 25%);
 }
 
 .Planet__description {
@@ -199,8 +207,13 @@ body.scrolled .Planet__info__buttons {
 		height: 460px;
 	}
 
-	.Planet__image img {
+	.Planet__img {
 		transform: scale(0.63445);
+	}
+
+	.Planet__surface-img {
+		height: 150px;
+		transform: translate(-50%, 30%);
 	}
 
 	.Planet__description {
@@ -317,9 +330,14 @@ body.scrolled .Planet__info__buttons {
 		max-height: 100%;
 	}
 
-	.Planet__image img {
+	.Planet__img {
 		max-width: 100%;
 		transform: scale(1);
+	}
+
+	.Planet__surface-img {
+		height: 200px;
+		transform: translate(-50%, 40%);
 	}
 
 	.Planet__description {
