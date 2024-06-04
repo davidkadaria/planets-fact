@@ -138,6 +138,12 @@ body.scrolled .Header__topbar {
 	border-radius: 50%;
 }
 
+@media (max-width: 767px) and (max-height: 611px) {
+	.Header__nav-item {
+		padding-block: 12px;
+	}
+}
+
 @media (min-width: 768px) {
 	.Header {
 		height: 160px;
