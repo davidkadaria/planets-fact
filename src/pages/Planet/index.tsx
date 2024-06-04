@@ -25,9 +25,9 @@ function Planet() {
 			navigate('/mercury', { replace: true });
 		}
 
-		return () => {
-			setTab('overview');
-		};
+		// return () => {
+		// 	setTab('overview');
+		// };
 	}, [navigate, planetName]);
 
 	if (!planetData) return null;
