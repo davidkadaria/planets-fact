@@ -10,8 +10,8 @@
 	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
 	.App__main {
-		margin-top: 85px;
+		margin-top: calc(85px + 126px);
 	}
 }
