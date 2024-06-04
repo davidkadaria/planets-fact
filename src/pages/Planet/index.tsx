@@ -5,42 +5,10 @@ import {
 	parseParticularPlanetData,
 	getImagePropertyNameByTab,
 } from '../../utils';
+import { buttonData, detailsData } from './data';
 import './Planet.css';
 
 const planetNames: string[] = parsePlanetNames();
-const buttonData: { id: string; label: 'overview' | 'structure' | 'surface' }[] = [
-	{
-		id: '01',
-		label: 'overview',
-	},
-	{
-		id: '02',
-		label: 'structure',
-	},
-	{
-		id: '03',
-		label: 'surface',
-	},
-];
-const detailsData: { key: 'rotation' | 'revolution' | 'radius' | 'temperature'; label: string }[] =
-	[
-		{
-			key: 'rotation',
-			label: 'Rotation time',
-		},
-		{
-			key: 'revolution',
-			label: 'Revolution time',
-		},
-		{
-			key: 'radius',
-			label: 'Radius',
-		},
-		{
-			key: 'temperature',
-			label: 'Average temp.',
-		},
-	];
 
 function Planet() {
 	const [tab, setTab] = useState<'overview' | 'structure' | 'surface'>('overview');
@@ -53,15 +21,13 @@ function Planet() {
 	}, [planetName]);
 
 	useEffect(() => {
-		// Validate the planet name
 		if (!planetNames.find((name) => name.toLowerCase() === planetName)) {
-			// If the planet name is not valid, redirect to the default planet page
 			navigate('/mercury', { replace: true });
 		}
 
-		// return () => {
-		// 	setTab('overview');
-		// };
+		return () => {
+			setTab('overview');
+		};
 	}, [navigate, planetName]);
 
 	if (!planetData) return null;
