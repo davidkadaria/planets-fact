@@ -242,6 +242,11 @@
 		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
+	.Planet__info__button:hover {
+		background-color: var(--secondary);
+		border-color: var(--secondary);
+	}
+
 	.Planet__info__button span {
 		height: 24px;
 		line-height: 24px;
@@ -259,6 +264,12 @@
 
 	.Planet__info__button--active {
 		background-color: var(--earth);
+		border-color: var(--earth);
+	}
+
+	.Planet__info__button--active:hover {
+		background-color: var(--earth);
+		border-color: var(--earth);
 	}
 
 	.Planet__info__button--active::after {
@@ -286,5 +297,112 @@
 		line-height: 30px;
 		letter-spacing: -0.9px;
 		font-size: 24px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.Planet__info {
+		height: 540px;
+		display: grid;
+		align-items: initial;
+		grid-template-columns: 1fr 350px;
+		gap: 130px;
+	}
+
+	.Planet__image {
+		max-height: 100%;
+	}
+
+	.Planet__image img {
+		max-width: 100%;
+		transform: scale(1);
+	}
+
+	.Planet__description {
+		flex-direction: column;
+		align-items: initial;
+		justify-content: space-between;
+		gap: 40px;
+	}
+
+	.Planet__dynamic-info {
+		height: 100%;
+		justify-content: space-between;
+	}
+
+	.Planet__name {
+		font-size: 80px;
+		line-height: 104px;
+	}
+
+	.Planet__summary {
+		margin: 0;
+		font-size: 14px;
+	}
+
+	.Planet__source {
+		font-size: 14px;
+	}
+
+	.Planet__source::before {
+		font-size: 14px;
+	}
+
+	.Planet__source::after {
+		right: calc(-12px - 8px);
+	}
+
+	.Planet__info__button {
+		width: 100%;
+		height: 48px;
+		padding: 12px 28px;
+		letter-spacing: 2.57143px;
+		font-size: 12px;
+	}
+
+	.Planet__info__button span {
+		margin-right: 28px;
+		letter-spacing: 2.57143px;
+		font-size: 12px;
+	}
+
+	.Planet__details {
+		margin-top: 88px;
+		margin-bottom: 56px;
+		gap: 30px;
+	}
+
+	.Planet__detail {
+		height: 128px;
+		padding: 20px 24px;
+		display: flex;
+		flex-direction: column;
+		justify-content: initial;
+		align-items: initial;
+		gap: 6px;
+	}
+
+	.Planet__detail__label {
+		line-height: 24px;
+		letter-spacing: 1px;
+		font-size: 12px;
+	}
+
+	.Planet__detail__value {
+		height: 52px;
+		line-height: 52px;
+		letter-spacing: -1.5px;
+		font-size: 32px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.Planet {
+		max-width: 1110px;
+		margin-inline: auto;
+	}
+
+	.Planet__detail__value {
+		font-size: 40px;
 	}
 }
