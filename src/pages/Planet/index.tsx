@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Button } from '../../components';
 import {
 	parsePlanetNames,
 	parseParticularPlanetData,
@@ -88,7 +87,7 @@ function Planet() {
 					</div>
 					<div className='Planet__info__buttons'>
 						{buttonData.map((button) => (
-							<Button
+							<button
 								key={button.id}
 								className={`Planet__info__button${
 									tab === button.label ? ' Planet__info__button--active' : ''
@@ -99,7 +98,7 @@ function Planet() {
 							>
 								<span>{button.id}</span>
 								{button.label}
-							</Button>
+							</button>
 						))}
 					</div>
 				</div>
