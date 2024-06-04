@@ -263,13 +263,13 @@
 	}
 
 	.Planet__info__button--active {
-		background-color: var(--earth);
-		border-color: var(--earth);
+		background-color: var(--primary);
+		border-color: var(--primary);
 	}
 
 	.Planet__info__button--active:hover {
-		background-color: var(--earth);
-		border-color: var(--earth);
+		background-color: var(--primary);
+		border-color: var(--primary);
 	}
 
 	.Planet__info__button--active::after {

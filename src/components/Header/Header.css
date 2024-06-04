@@ -239,7 +239,7 @@
 		display: block !important;
 		height: 4px;
 		top: calc(-100% - 4px);
-		background-color: var(--moonstone);
+		background-color: var(--primary);
 		opacity: 0;
 	}
 

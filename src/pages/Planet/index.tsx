@@ -111,6 +111,12 @@ function Planet() {
 					</div>
 				))}
 			</section>
+
+			<style>{`
+				:root {
+					--primary: var(--${planetName}-theme);
+				}
+			`}</style>
 		</div>
 	);
 }
