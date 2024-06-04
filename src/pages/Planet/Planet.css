@@ -84,4 +84,104 @@
 }
 
 .Planet__info__buttons {
+	position: fixed;
+	top: 70px;
+	left: 0;
+	right: 0;
+	height: 50px;
+	padding-inline: var(--padding-x);
+	display: flex;
+	justify-content: space-between;
+}
+
+.Planet__info__buttons::after {
+	content: '';
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	background-color: var(--white);
+	opacity: 0.25;
+}
+
+.Planet__info__button {
+	width: 80px;
+	position: relative;
+	background-color: transparent;
+	color: var(--white);
+	border: 0;
+	outline: 0;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1.92857px;
+	font-family: var(--ff-spartan);
+	font-weight: 700;
+	font-size: 10px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.Planet__info__button span {
+	display: none;
+}
+
+.Planet__info__button--active {
+	opacity: 1;
+}
+
+.Planet__info__button--active::after {
+	content: '';
+	width: 100%;
+	height: 4px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	background-color: var(--white);
+}
+
+.Planet__details {
+	width: 100%;
+	margin-top: 28px;
+	margin-bottom: 56px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.Planet__detail {
+	width: 100%;
+	padding: 12px 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.Planet__detail__label,
+.Planet__detail__value {
+	color: var(--white);
+	text-transform: uppercase;
+}
+
+.Planet__detail__label {
+	line-height: 16px;
+	letter-spacing: 0.727273px;
+	font-family: var(--ff-spartan);
+	font-weight: 700;
+	font-size: 8px;
+	mix-blend-mode: normal;
+	opacity: 0.5;
+}
+
+.Planet__detail__value {
+	height: 26px;
+	line-height: 26px;
+	letter-spacing: -0.75px;
+	font-family: var(--ff-antonio);
+	font-size: 20px;
 }

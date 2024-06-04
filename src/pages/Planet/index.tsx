@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Button } from '../../components';
 import {
 	parsePlanetNames,
 	parseParticularPlanetData,
@@ -7,10 +8,43 @@ import {
 } from '../../utils';
 import './Planet.css';
 
-const planetNames = parsePlanetNames();
+const planetNames: string[] = parsePlanetNames();
+const buttonData: { id: string; label: 'overview' | 'structure' | 'surface' }[] = [
+	{
+		id: '01',
+		label: 'overview',
+	},
+	{
+		id: '02',
+		label: 'structure',
+	},
+	{
+		id: '03',
+		label: 'surface',
+	},
+];
+const detailsData: { key: 'rotation' | 'revolution' | 'radius' | 'temperature'; label: string }[] =
+	[
+		{
+			key: 'rotation',
+			label: 'Rotation time',
+		},
+		{
+			key: 'revolution',
+			label: 'Revolution time',
+		},
+		{
+			key: 'radius',
+			label: 'Radius',
+		},
+		{
+			key: 'temperature',
+			label: 'Average temp.',
+		},
+	];
 
 function Planet() {
-	const [tab, setTab] = useState<'overview' | 'structure' | 'geology'>('overview');
+	const [tab, setTab] = useState<'overview' | 'structure' | 'surface'>('overview');
 
 	const { planetName } = useParams();
 	const navigate = useNavigate();
@@ -51,34 +85,29 @@ function Planet() {
 						Wikipedia
 					</a>
 					<div className='Planet__info__buttons'>
-						<button
-							className='Planet__info__button'
-							onClick={() => {
-								setTab('overview');
-							}}
-						>
-							01 OVERVIEW
-						</button>
-						<button
-							className='Planet__info__button'
-							onClick={() => {
-								setTab('structure');
-							}}
-						>
-							02 STRUCTURE
-						</button>
-						<button
-							className='Planet__info__button'
-							onClick={() => {
-								setTab('geology');
-							}}
-						>
-							03 SURFACE
-						</button>
+						{buttonData.map((button) => (
+							<Button
+								className={`Planet__info__button${
+									tab === button.label ? ' Planet__info__button--active' : ''
+								}`}
+								onClick={() => {
+									setTab(button.label);
+								}}
+							>
+								<span>{button.id}</span> {button.label}
+							</Button>
+						))}
 					</div>
 				</div>
 			</section>
-			<section className='Planet__details'></section>
+			<section className='Planet__details'>
+				{detailsData.map((detail) => (
+					<div className='Planet__detail' key={detail.key}>
+						<span className='Planet__detail__label'>{detail.label}</span>
+						<span className='Planet__detail__value'>{planetData[detail.key]}</span>
+					</div>
+				))}
+			</section>
 		</div>
 	);
 }
