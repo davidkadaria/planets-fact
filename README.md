@@ -27,7 +27,7 @@ Users are able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/planets-fact-site-using-react-vUp6YHdmfN)
 - Live Site URL: [Vercel](https://planets-fact-five.vercel.app/)
 
 ### Built with
